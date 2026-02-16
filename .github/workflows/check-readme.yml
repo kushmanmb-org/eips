@@ -1,0 +1,25 @@
+name: Check README Updates
+
+on:
+  push:
+    paths:
+      - "README.md"
+  pull_request:
+    paths:
+      - "README.md"
+
+jobs:
+  check-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Verify README Format
+      run: |
+        if [[ $(wc -l < README.md) -lt 1 ]]; then
+          echo "README.md is empty!"
+          exit 1
+        fi
+        echo "README.md looks good!"
