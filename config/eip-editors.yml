@@ -12,6 +12,7 @@ core:
 erc:
   - SamWilsn
   - xinbenlv
+  - kushmanmb
 networking:
   - lightclient
   - SamWilsn
